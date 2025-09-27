@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization -->
+    <title>MEGAGYM | Entrenamiento de Alto Rendimiento y Acceso 24/7</title>
+    <meta name="description" content="MEGAGYM: El gimnasio de alto rendimiento en Providencia, Ñuñoa. Equipos de última generación, entrenamiento personalizado y acceso flexible 24 horas. ¡Tu inversión en salud!">
+    <meta name="keywords" content="gimnasio 24 horas, entrenamiento de alto rendimiento, personal training, HIIT, Spinning, Providencia, Ñuñoa, Santiago Centro">
+    <meta name="author" content="MEGAGYM">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Configuration for Gold/Yellow and Inter Font */
+        :root {
+            --color-primary: #111827; /* Dark Gray/Blackish */
+            --color-secondary: #FBBF24; /* Intense Gold/Yellow 400 */
+            --color-accent: #374151; /* Dark Gray 700 */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        /* Subtle Fade In Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar for Chat */
+        #chat-window {
+            height: 400px;
+            overflow-y: auto;
+        }
+        #chat-window::-webkit-scrollbar {
+            width: 8px;
+        }
+        #chat-window::-webkit-scrollbar-thumb {
+            background-color: var(--color-secondary);
+            border-radius: 4px;
+        }
+        #chat-window::-webkit-scrollbar-track {
+            background-color: var(--color-accent);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mega-black': '#111827',
+                        'mega-gold': '#FBBF24',
+                        'mega-gray': '#374151',
+                    },
+                },
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-mega-black bg-opacity-95 shadow-lg border-b border-mega-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 text-xl font-extrabold tracking-wider text-mega-gold">
+                    MEGAGYM
+                </div>
+                <!-- Desktop Links -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#membresias" class="text-white hover:text-mega-gold transition duration-300">Membresías</a>
+                    <a href="#clases" class="text-white hover:text-mega-gold transition duration-300">Clases</a>
+                    <a href="#galeria" class="text-white hover:text-mega-gold transition duration-300">Instalaciones</a>
+                    <a href="#beneficios" class="text-white hover:text-mega-gold transition duration-300">Beneficios</a>
+                    <button onclick="document.getElementById('chat-button').click()" class="px-4 py-1 text-mega-black bg-mega-gold rounded-full font-bold hover:opacity-90 transition duration-300 shadow-lg">
+                        Asesor IA
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white hover:text-mega-gold focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-mega-gray">
+                <a href="#membresias" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Membresías</a>
+                <a href="#clases" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Clases</a>
+                <a href="#galeria" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Instalaciones</a>
+                <a href="#beneficios" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Beneficios</a>
+                <button onclick="document.getElementById('chat-button').click()" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-mega-black bg-mega-gold hover:bg-yellow-400 transition duration-300">
+                    Asesor IA
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <!-- Placeholder Background Image -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1F2937/FBBF24?text=[Imagen de Equipos de Fitness de Alta Calidad]');">
+                <div class="absolute inset-0 bg-mega-black opacity-70"></div>
+            </div>
+            
+            <div class="relative z-10 p-6 md:p-12 max-w-4xl fade-in-section">
+                <h1 class="text-5xl sm:text-7xl font-extrabold text-white leading-tight mb-4">
+                    MEGAGYM
+                </h1>
+                <p class="text-2xl sm:text-3xl font-light text-mega-gold mb-8">
+                    "No es un gasto, <span class="font-bold">es una inversión.</span>"
+                </p>
+                <p class="text-lg text-gray-300 mb-10">
+                    Acceso 24/7, tecnología de punta y entrenamiento personalizado para llevar tu rendimiento al máximo nivel.
+                </p>
+                <a href="#membresias" class="inline-block px-10 py-4 bg-mega-gold text-mega-black text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition duration-300 transform">
+                    ¡Comienza a Invertir Hoy!
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Membresías Section -->
+        <section id="membresias" class="py-16 md:py-24 bg-mega-gray fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white border-b-2 border-mega-gold inline-block pb-2">Planes de Membresía</h2>
+                <p class="text-center text-gray-300 mb-16 max-w-3xl mx-auto">
+                    Elige el nivel de compromiso que mejor se adapte a tus metas. Todos nuestros planes son una inversión garantizada en tu salud.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Plan Bronce -->
+                    <div class="bg-mega-black p-8 rounded-2xl shadow-2xl transition duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(251,191,36,0.2)] border-t-4 border-gray-500">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-300">Plan Bronce</h3>
+                        <p class="text-4xl font-extrabold text-white mb-6">$35.000<span class="text-xl font-light text-gray-400">/mes</span></p>
+                        <ul class="space-y-3 text-gray-300 mb-8 list-none">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acceso al Gimnasio</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Uso de Máquinas Premium</li>
+                            <li class="pl-7 text-sm italic text-gray-500">Horario de Acceso: 6 AM - 10 PM</li>
+                        </ul>
+                        <button class="w-full py-3 bg-gray-500 text-mega-black font-bold rounded-lg hover:bg-gray-400 transition duration-300">Elegir Bronce</button>
+                    </div>
+
+                    <!-- Plan Oro (Destacado) -->
+                    <div class="bg-mega-black p-10 rounded-3xl shadow-2xl transition duration-500 scale-[1.05] border-8 border-mega-gold relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-mega-gold text-mega-black text-sm font-bold px-4 py-1 rounded-bl-lg">MÁS POPULAR</div>
+                        <h3 class="text-4xl font-bold mb-4 text-mega-gold">Plan Oro</h3>
+                        <p class="text-5xl font-extrabold text-white mb-6">$300.000<span class="text-xl font-light text-gray-400">/año</span></p>
+                        <ul class="space-y-3 text-white mb-8 list-none">
+                            <li class="flex items-center font-semibold"><svg class="w-6 h-6 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.222a1 1 0 011.902 0l1.583 4.881 5.148.374a1 1 0 01.55 1.704l-3.93 2.946 1.18 5.093a1 1 0 01-1.542 1.12l-4.26-2.529-4.26 2.53a1 1 0 01-1.542-1.12l1.18-5.093-3.93-2.946a1 1 0 01.55-1.704l5.148-.374 1.583-4.881z"></path></svg> Acceso <span class="text-mega-gold">24/7</span> ILIMITADO</li>
+                            <li class="flex items-center font-semibold"><svg class="w-6 h-6 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Clases Grupales Ilimitadas</li>
+                            <li class="flex items-center font-semibold"><svg class="w-6 h-6 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="text-mega-gold">2 Sesiones de Personal Training/Mes</span></li>
+                        </ul>
+                        <button class="w-full py-4 bg-mega-gold text-mega-black text-lg font-extrabold rounded-xl hover:bg-yellow-400 transition duration-300 shadow-2xl mt-4">¡MAXIMIZA TU INVERSIÓN!</button>
+                    </div>
+
+                    <!-- Plan Plata -->
+                    <div class="bg-mega-black p-8 rounded-2xl shadow-2xl transition duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(251,191,36,0.2)] border-t-4 border-gray-500">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-300">Plan Plata</h3>
+                        <p class="text-4xl font-extrabold text-white mb-6">$90.000<span class="text-xl font-light text-gray-400">/trimestre</span></p>
+                        <ul class="space-y-3 text-gray-300 mb-8 list-none">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acceso <span class="font-bold">24/7</span></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Uso de Máquinas Premium</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 1 Clase Grupal por Semana</li>
+                        </ul>
+                        <button class="w-full py-3 bg-gray-500 text-mega-black font-bold rounded-lg hover:bg-gray-400 transition duration-300">Elegir Plata</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Clases & PT Section -->
+        <section id="clases" class="py-16 md:py-24 bg-mega-black fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white border-b-2 border-mega-gold inline-block pb-2">Clases Grupales y Personal Training</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Clases Grupales -->
+                    <div class="bg-mega-gray p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold mb-4 text-mega-gold flex items-center">
+                            <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2c0-.656-.126-1.283-.356-1.857M9 20H4v-2a3 3 0 015-2.236M9 20v-2m0 0a3 3 0 013-3m-6 3a2 2 0 100-4 2 2 0 000 4zm11 1a2 2 0 100-4 2 2 0 000 4zm-11-9a2 2 0 100-4 2 2 0 000 4zm7 0a7 7 0 1010-4 7 7 0 000 4z"></path></svg>
+                            Clases Grupales
+                        </h3>
+                        <p class="text-gray-400 mb-6">Motivación en equipo, resultados individuales. Nuestras clases de alto impacto están diseñadas para todos los niveles.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-mega-black p-4 rounded-lg shadow-inner">
+                                <p class="text-xl font-semibold text-white">HIIT (High-Intensity Interval Training)</p>
+                                <p class="text-mega-gold font-medium">Lunes a Viernes: 8:00 AM y 8:00 PM</p>
+                            </div>
+                            <div class="bg-mega-black p-4 rounded-lg shadow-inner">
+                                <p class="text-xl font-semibold text-white">Spinning (Ciclismo Indoor)</p>
+                                <p class="text-mega-gold font-medium">Lunes a Viernes: 8:00 AM y 8:00 PM</p>
+                            </div>
+                            <div class="bg-mega-black p-4 rounded-lg shadow-inner">
+                                <p class="text-xl font-semibold text-white">Yoga Funcional</p>
+                                <p class="text-mega-gold font-medium">Lunes a Viernes: 8:00 AM y 8:00 PM</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-sm text-gray-500 italic">Consulta el calendario completo en recepción.</p>
+                    </div>
+
+                    <!-- Personal Training (PT) -->
+                    <div class="bg-mega-gray p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-3xl font-bold mb-4 text-mega-gold flex items-center">
+                            <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Entrenamiento Personalizado (PT)
+                        </h3>
+                        <p class="text-gray-400 mb-6">Resultados acelerados con un plan 100% diseñado para ti y tu fisiología. <span class="font-bold">¡Invierte en tu potencial!</span></p>
+                        
+                        <div class="space-y-4">
+                            <!-- PT Básico -->
+                            <div class="bg-mega-black p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 transition duration-300">
+                                <div>
+                                    <p class="text-xl font-semibold text-white">PT Básico (4 sesiones/mes)</p>
+                                    <p class="text-gray-400">Ideal para empezar con una base sólida.</p>
+                                </div>
+                                <p class="text-xl font-bold text-mega-gold">$80.000</p>
+                            </div>
+                            <!-- PT Avanzado -->
+                            <div class="bg-mega-black p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 transition duration-300">
+                                <div>
+                                    <p class="text-xl font-semibold text-white">PT Avanzado (8 sesiones/mes)</p>
+                                    <p class="text-gray-400">Progreso constante y seguimiento semanal.</p>
+                                </div>
+                                <p class="text-xl font-bold text-mega-gold">$140.000</p>
+                            </div>
+                            <!-- PT Élite -->
+                            <div class="bg-mega-black p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 transition duration-300 border-2 border-mega-gold">
+                                <div>
+                                    <p class="text-xl font-semibold text-mega-gold">PT Élite (12 sesiones/mes)</p>
+                                    <p class="text-white font-medium">Transformación total y dedicación exclusiva.</p>
+                                </div>
+                                <p class="text-xl font-bold text-mega-gold">$180.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Galería de Instalaciones (Gallery) -->
+        <section id="galeria" class="py-16 md:py-24 bg-mega-black fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white border-b-2 border-mega-gold inline-block pb-2">Instalaciones de Última Generación</h2>
+                <p class="text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                    Solo trabajamos con los mejores equipos. Tu rendimiento merece lo mejor del mercado.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Placeholder Images with High-Quality Vibe -->
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300">
+                        <img src="https://placehold.co/600x400/111827/FBBF24?text=[Zona de Cardio de Lujo]" alt="Zona de Cardio de Lujo" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300">
+                        <img src="https://placehold.co/600x400/111827/FBBF24?text=[Sala de Pesas Libres Profesional]" alt="Sala de Pesas Libres Profesional" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300">
+                        <img src="https://placehold.co/600x400/111827/FBBF24?text=[Estudio de Clases Grupales Amplio]" alt="Estudio de Clases Grupales Amplio" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300">
+                        <img src="https://placehold.co/600x400/111827/FBBF24?text=[Equipos de Calistenia y Funcional]" alt="Equipos de Calistenia y Funcional" class="w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Beneficios y Adicionales Section -->
+        <section id="beneficios" class="py-16 md:py-24 bg-mega-gray fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Garantías y Beneficios -->
+                    <div class="p-8 rounded-2xl shadow-xl bg-mega-black border-l-4 border-mega-gold">
+                        <h3 class="text-3xl font-bold mb-6 text-mega-gold">Tu Inversión, Nuestra Garantía</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Garantía -->
+                            <div class="flex items-start">
+                                <svg class="w-8 h-8 text-white flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.24l-3.299 12.9a1 1 0 01-1.35 1.052L12 18l-5.618 2.37A1 1 0 014 17.668l3.299-12.9a1 1 0 011.35-1.052l.09-.044"></path></svg>
+                                <div class="ml-4">
+                                    <p class="text-xl font-semibold text-white">Garantía de Satisfacción Total</p>
+                                    <p class="text-gray-400">Si en 30 días no estás satisfecho con tu experiencia MEGAGYM, <span class="font-bold text-mega-gold">te devolvemos la primera cuota.</span></p>
+                                </div>
+                            </div>
+                            <!-- Flexibilidad -->
+                            <div class="flex items-start">
+                                <svg class="w-8 h-8 text-white flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <div class="ml-4">
+                                    <p class="text-xl font-semibold text-white">Beneficio de Flexibilidad (Congelación)</p>
+                                    <p class="text-gray-400">Puedes congelar tu membresía hasta 2 veces al año (máximo 15 días cada vez) si necesitas una pausa. <span class="italic">Tu inversión te espera.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicios Adicionales -->
+                    <div class="p-8 rounded-2xl shadow-xl bg-mega-black border-l-4 border-mega-gold">
+                        <h3 class="text-3xl font-bold mb-6 text-mega-gold">Servicios Premium Adicionales</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Nutricional -->
+                            <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <p class="text-xl font-semibold text-white">Evaluación Nutricional Avanzada</p>
+                                    <p class="text-gray-400">Plan de alimentación alineado a tus objetivos de rendimiento.</p>
+                                </div>
+                                <p class="text-xl font-bold text-mega-gold">$50.000<span class="text-sm font-light text-gray-400">/sesión</span></p>
+                            </div>
+                            <!-- Lockers -->
+                            <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <p class="text-xl font-semibold text-white">Lockers Premium</p>
+                                    <p class="text-gray-400">Seguridad y comodidad con cargador USB integrado.</p>
+                                </div>
+                                <p class="text-xl font-bold text-mega-gold">$10.000<span class="text-sm font-light text-gray-400">/mes</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Testimonios Section -->
+        <section id="testimonios" class="py-16 md:py-24 bg-mega-black fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white border-b-2 border-mega-gold inline-block pb-2">Resultados que Inspiran</h2>
+                <p class="text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                    Escucha lo que dicen quienes ya están invirtiendo en su salud con MEGAGYM.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonio 1 -->
+                    <div class="bg-mega-gray p-6 rounded-xl shadow-lg border-t-4 border-mega-gold">
+                        <p class="italic text-gray-300 mb-4">"El acceso 24/7 con el Plan Oro cambió mi vida. Puedo entrenar a las 3 AM sin problemas, algo impagable. La calidad de las máquinas es otro nivel."</p>
+                        <p class="font-bold text-white">- Ricardo S. (Emprendedor)</p>
+                    </div>
+                    <!-- Testimonio 2 -->
+                    <div class="bg-mega-gray p-6 rounded-xl shadow-lg border-t-4 border-mega-gold">
+                        <p class="italic text-gray-300 mb-4">"Tomé el paquete PT Élite y he visto más progreso en 3 meses que en 2 años de gimnasio normal. Los entrenadores son verdaderos profesionales."</p>
+                        <p class="font-bold text-white">- Javiera M. (Estudiante)</p>
+                    </div>
+                    <!-- Testimonio 3 -->
+                    <div class="bg-mega-gray p-6 rounded-xl shadow-lg border-t-4 border-mega-gold">
+                        <p class="italic text-gray-300 mb-4">"Las clases de HIIT son intensas y adictivas. El ambiente es súper energético y te hace sentir que cada esfuerzo vale la pena. ¡100% recomendado!"</p>
+                        <p class="font-bold text-white">- Diego A. (Ejecutivo)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-mega-black border-t border-mega-gray py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-2xl font-extrabold tracking-wider text-mega-gold mb-4">MEGAGYM</h4>
+                    <p class="text-gray-400 max-w-xs mx-auto md:mx-0">Tu socio para el alto rendimiento. Donde cada sudor es una inversión, no un gasto.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Horarios y Contacto</h4>
+                    <p class="text-gray-400">Acceso 24/7 (Planes Plata y Oro)</p>
+                    <p class="text-gray-400">Horario de Máquinas (Bronce): 6:00 AM - 10:00 PM</p>
+                    <p class="text-gray-400 mt-2">Atención al Cliente: 6:00 AM - 10:00 PM</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Zona de Cobertura</h4>
+                    <ul class="text-gray-400 space-y-1">
+                        <li>Providencia</li>
+                        <li>Ñuñoa</li>
+                        <li>Santiago Centro</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2025 MEGAGYM. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Gemini AI Chatbot Implementation -->
+    <div id="ai-chat-container" class="fixed bottom-4 right-4 z-50">
+        <!-- Chat Toggle Button -->
+        <button id="chat-button" class="bg-mega-gold text-mega-black p-4 rounded-full shadow-2xl hover:bg-yellow-400 transition duration-300 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z"></path></svg>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-box" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 bg-mega-black rounded-xl shadow-2xl border-2 border-mega-gold overflow-hidden transition-all duration-300">
+            <div class="p-3 bg-mega-gray flex justify-between items-center border-b border-mega-gold">
+                <p class="text-lg font-bold text-mega-gold">Asesor IA MEGAGYM</p>
+                <button onclick="document.getElementById('chat-button').click()" class="text-white hover:text-mega-gold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chat-window" class="p-4 space-y-4">
+                <div class="flex justify-start">
+                    <div class="bg-mega-gold p-3 rounded-xl text-mega-black max-w-[80%] shadow-md">
+                        ¡Hola! Soy tu Asesor Virtual de MEGAGYM. ¿En qué puedo ayudarte hoy a empezar tu inversión en fitness? 💪
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interest CTA -->
+            <div id="interest-cta" class="p-2 bg-mega-gray hidden border-t border-mega-gold">
+                <p class="text-sm text-center text-white mb-2 font-semibold">¿Interesado en una inversión real?</p>
+                <button onclick="alert('Funcionalidad de agendamiento simulada. Contacta al 555-MEGAGYM');" class="w-full py-2 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition duration-300">
+                    Agendar Evaluación GRATIS
+                </button>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-3 border-t border-mega-gray flex">
+                <input type="text" id="user-input" placeholder="Escribe tu consulta..." class="w-full p-2 rounded-l-lg bg-mega-gray text-white placeholder-gray-400 focus:ring-2 focus:ring-mega-gold focus:outline-none" onkeydown="if(event.key === 'Enter') sendMessage()">
+                <button id="send-button" onclick="sendMessage()" class="bg-mega-gold text-mega-black p-2 rounded-r-lg hover:bg-yellow-400 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </div>
+            <!-- Loading Indicator -->
+            <div id="loading-indicator" class="p-2 text-center text-sm text-mega-gold hidden">
+                ... Pensando la mejor respuesta 💪
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = ""; // Canvas environment will provide the API key
+        const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
+        
+        // Contexto para el Asesor Virtual (System Instruction)
+        const systemPrompt = "Eres un asesor de MEGAGYM, el gimnasio de alto rendimiento. Información del negocio: Planes de Membresía: Bronce $35.000 (Mensual, Acceso 6 AM - 10 PM), Plata $90.000 (Trimestral, Acceso 24/7, 1 clase/semana), Oro $300.000 (Anual, Acceso 24/7, Clases Ilimitadas, 2 PT/mes). Paquetes de Entrenamiento Personal (PT): Básico $80.000 (4 sesiones), Avanzado $140.000 (8 sesiones), Élite $180.000 (12 sesiones). Clases Grupales: HIIT, Spinning, Yoga Funcional (Lun-Vie: 8:00 AM y 8:00 PM). Garantía: 30 días de satisfacción o devolución de la primera cuota. Beneficio de Flexibilidad: Congela tu membresía hasta 2 veces al año (máx. 15 días cada vez). Servicios Adicionales: Evaluación Nutricional $50.000/sesión, Lockers Premium $10.000/mes. Lema: 'No es un gasto, es una inversión'. Responde solo con esta información. Respuestas cortas y motivadoras con emojis 💪🔥.";
+
+        const chatWindow = document.getElementById('chat-window');
+        const chatBox = document.getElementById('chat-box');
+        const chatButton = document.getElementById('chat-button');
+        const userInput = document.getElementById('user-input');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const interestCta = document.getElementById('interest-cta');
+
+        // --- 1. Chat UI Logic ---
+
+        chatButton.addEventListener('click', () => {
+            const isHidden = chatBox.classList.contains('hidden');
+            if (isHidden) {
+                chatBox.classList.remove('hidden');
+                setTimeout(() => chatWindow.scrollTop = chatWindow.scrollHeight, 100);
+            } else {
+                chatBox.classList.add('hidden');
+            }
+        });
+
+        // --- 2. Message Rendering ---
+        function addMessage(text, isUser) {
+            const messageContainer = document.createElement('div');
+            messageContainer.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            
+            const messageBubble = document.createElement('div');
+            messageBubble.className = `p-3 rounded-xl max-w-[80%] shadow-md ${
+                isUser ? 'bg-blue-600 text-white' : 'bg-mega-gold text-mega-black'
+            }`;
+            messageBubble.innerText = text;
+
+            messageContainer.appendChild(messageBubble);
+            chatWindow.appendChild(messageContainer);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        // --- 3. Gemini API Call with Exponential Backoff ---
+        async function fetchWithBackoff(url, options, maxRetries = 5) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) {
+                        return response;
+                    }
+                    if (response.status === 429 && i < maxRetries - 1) {
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        console.log(`API rate limit hit. Retrying in ${delay / 1000}s...`);
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        continue;
+                    }
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                } catch (error) {
+                    if (i === maxRetries - 1) {
+                        console.error("API Call Failed After Max Retries:", error);
+                        throw error;
+                    }
+                }
+            }
+        }
+
+        async function sendMessage() {
+            const userText = userInput.value.trim();
+            if (!userText) return;
+
+            addMessage(userText, true);
+            userInput.value = '';
+            
+            loadingIndicator.classList.remove('hidden');
+
+            const fullApiUrl = `${apiUrl}?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userText }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            const options = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            };
+
+            try {
+                const response = await fetchWithBackoff(fullApiUrl, options);
+                const result = await response.json();
+                
+                const modelText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (modelText) {
+                    addMessage(modelText, false);
+                    detectInterest(userText);
+                } else {
+                    addMessage("Lo siento, hubo un problema con la respuesta del asesor. Intenta de nuevo. 🔥", false);
+                    console.error("Gemini API response missing text:", result);
+                }
+            } catch (error) {
+                addMessage("Lo siento, no puedo comunicarme con el servidor ahora. ¡Intenta de nuevo más tarde!", false);
+                console.error("Gemini API request failed:", error);
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                userInput.focus();
+            }
+        }
+
+        // --- 4. Interest Detection Logic ---
+        function detectInterest(query) {
+            const lowerQuery = query.toLowerCase();
+            const interestKeywords = [
+                'precio', 'costo', 'valor', 'cuota', 'inscribir', 'inscripción', 
+                'tour', 'visitar', 'probar', 'empezar', 'planes', 'como'
+            ];
+            
+            const highInterest = interestKeywords.some(keyword => lowerQuery.includes(keyword));
+
+            if (highInterest) {
+                interestCta.classList.remove('hidden');
+            }
+        }
+
+
+        // --- 5. Scroll Animation (Intersection Observer) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the item is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Initial AI message
+            addMessage("¡Hola! Soy tu Asesor Virtual de MEGAGYM. ¿En qué puedo ayudarte hoy a empezar tu inversión en fitness? 💪", false);
+        });
+
+    </script>
+</body>
+</html>
