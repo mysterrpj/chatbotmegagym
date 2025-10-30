@@ -1,3 +1,4 @@
+
 export default async function handler(req, res) {
   // Solo permitir método POST
   if (req.method !== "POST") {
