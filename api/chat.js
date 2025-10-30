@@ -1,35 +1,58 @@
 export default async function handler(req, res) {
+  // Solo permitir método POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { prompt } = req.body;
-
   try {
-    // Usa tu variable de entorno o tu API Key directa como respaldo
-    const apiKey = process.env.API_KEY || "AIzaSyA11m1xmOH_uXlQ8o4TRFTTnEVkhDd_rmY";
+    // Obtener el prompt del cuerpo de la solicitud
+    const { prompt } = req.body;
+
+    // Obtener la API Key desde las variables de entorno o usar respaldo manual (solo para prueba local)
+    const apiKey = process.env.API_KEY || "TU_API_KEY_DE_GEMINI_AQUI";
+
+    // Endpoint de Gemini
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
+    // Realizar la solicitud al modelo
     const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: prompt }],
+          },
+        ],
       }),
     });
 
+    // Leer respuesta de Gemini
     const data = await response.json();
 
-    if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
-      res.status(200).json({ reply: data.candidates[0].content.parts[0].text });
-    } else {
+    // Manejar errores de respuesta
+    if (!response.ok) {
       console.error("Gemini API Error:", data);
-      res.status(500).json({ error: "No response from Gemini API", details: data });
+      return res
+        .status(response.status)
+        .json({ error: "Gemini API error", details: data });
     }
+
+    // Verificar si hay texto generado
+    const output =
+      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "Lo siento, no pude generar una respuesta en este momento.";
+
+    // Devolver la respuesta al frontend
+    res.status(200).json({ reply: output });
   } catch (error) {
     console.error("Server Error:", error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({
+      error: "Internal server error",
+      message: error.message,
+    });
   }
 }
