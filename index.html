@@ -451,7 +451,7 @@
     </div>
 
     <script>
-        const apiKey = "AIzaSyAl1m1xmoH_uxlQ8o4TRFTTnEVkhDd_rmY"; // Canvas environment will provide the API key
+        const apiKey = process.env.API_KEY; // Canvas environment will provide the API key
         const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
         
         // Contexto para el Asesor Virtual (System Instruction)
