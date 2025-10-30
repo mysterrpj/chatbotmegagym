@@ -615,7 +615,7 @@
 
             try {
   // --- CORREGIDO: llamada directa al endpoint backend ---
-  const response = await fetch("/api/chat", options);
+  const response = await fetch(apiUrl, options);
   const result = await response.json();
 
   // Soporte para ambos formatos de respuesta
