@@ -4,17 +4,21 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Recibe el prompt desde el frontend
+    // ✅ En Vercel se usa req.body directamente, no req.json()
     const { prompt } = req.body;
 
-    // Valida que exista un prompt
     if (!prompt || prompt.trim() === "") {
       return res.status(400).json({ error: "El prompt está vacío" });
     }
 
-    // Llama a la API de Gemini
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: "API_KEY no configurada" });
+    }
+
+    // ✅ Llamada correcta a Gemini API (v1beta)
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -26,27 +30,19 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // ✅ Manejo moderno del formato de Gemini (2025)
-    let textResponse = "";
-
-    if (data?.candidates?.length > 0) {
-      const parts = data.candidates[0]?.content?.parts;
-      if (Array.isArray(parts) && parts.length > 0 && parts[0].text) {
-        textResponse = parts[0].text;
-      } else {
-        textResponse = "No se encontró texto en la respuesta de Gemini 😢";
-      }
+    // ✅ Adaptado al formato real de Gemini
+    let reply = "";
+    if (data?.candidates?.[0]?.content?.parts?.[0]?.text) {
+      reply = data.candidates[0].content.parts[0].text;
+    } else if (data?.error?.message) {
+      reply = `⚠️ Error de Gemini: ${data.error.message}`;
     } else {
-      textResponse = "No hubo respuesta del modelo Gemini 😕";
+      reply = "No se pudo obtener una respuesta del modelo Gemini 😕";
     }
 
-    // Envía la respuesta al frontend
-    res.status(200).json({ reply: textResponse });
+    res.status(200).json({ reply });
   } catch (error) {
     console.error("Error en el servidor:", error);
-    res.status(500).json({
-      error: "Error interno en el servidor",
-      details: error.message,
-    });
+    res.status(500).json({ error: "Error interno del servidor", details: error.message });
   }
 }
