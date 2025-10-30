@@ -598,7 +598,7 @@
                 // Don't set hasGivenDetailedInfo=true, as this might be a follow-up on classes, not a general info request.
             }
 
-            const fullApiUrl = `${apiUrl}?key=${apiKey}`;
+            const fullApiUrl = apiUrl;
 
             const payload = {
                 contents: [{ parts: [{ text: finalQuery }] }],
@@ -610,7 +610,7 @@
             const options = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({ prompt: finalQuery })
             };
 
             try {
