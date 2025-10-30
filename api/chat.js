@@ -4,33 +4,49 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { prompt } = await req.json(); // ✅ CORREGIDO
+    // Recibe el prompt desde el frontend
+    const { prompt } = req.body;
 
-    const apiKey = process.env.API_KEY; // asegúrate que en Vercel se llama exactamente así
-    if (!apiKey) {
-      return res.status(500).json({ error: "API_KEY no configurada en entorno" });
+    // Valida que exista un prompt
+    if (!prompt || prompt.trim() === "") {
+      return res.status(400).json({ error: "El prompt está vacío" });
     }
 
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }]
-      }),
-    });
+    // Llama a la API de Gemini
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }]
+        }),
+      }
+    );
 
     const data = await response.json();
 
-    if (response.ok && data?.candidates?.[0]?.content?.parts?.[0]?.text) {
-      res.status(200).json({ reply: data.candidates[0].content.parts[0].text });
+    // ✅ Manejo moderno del formato de Gemini (2025)
+    let textResponse = "";
+
+    if (data?.candidates?.length > 0) {
+      const parts = data.candidates[0]?.content?.parts;
+      if (Array.isArray(parts) && parts.length > 0 && parts[0].text) {
+        textResponse = parts[0].text;
+      } else {
+        textResponse = "No se encontró texto en la respuesta de Gemini 😢";
+      }
     } else {
-      console.error("Gemini API error:", data);
-      res.status(500).json({ error: "Error de la API de Gemini", details: data });
+      textResponse = "No hubo respuesta del modelo Gemini 😕";
     }
+
+    // Envía la respuesta al frontend
+    res.status(200).json({ reply: textResponse });
   } catch (error) {
-    console.error("Error del servidor:", error);
-    res.status(500).json({ error: error.message });
+    console.error("Error en el servidor:", error);
+    res.status(500).json({
+      error: "Error interno en el servidor",
+      details: error.message,
+    });
   }
 }
