@@ -135,29 +135,37 @@
         <section id="membresias" class="py-16 md:py-24 bg-mega-gray fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center mb-12 text-white border-b-2 border-mega-gold inline-block pb-2">Planes de Membresía</h2>
-                <p class="text-center text-gray-300 mb-16 max-w-3xl mx-auto">
+                <p class="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
                     Elige el nivel de compromiso que mejor se adapte a tus metas. Todos nuestros planes son una inversión garantizada en tu salud.
                 </p>
+                
+                <!-- NEW: Daily Pass Callout (Kept for flexibility as per previous request) -->
+                <div class="text-center mb-12">
+                    <span class="inline-block bg-gray-700 text-white text-xl font-bold px-6 py-2 rounded-full shadow-lg border border-mega-gold">
+                        Opción Flexible: Plan Diario por solo S/6
+                    </span>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <!-- Plan Bronce -->
+                    <!-- 1. Plan Mensual (formerly Bronce) -->
                     <div class="bg-mega-black p-8 rounded-2xl shadow-2xl transition duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(251,191,36,0.2)] border-t-4 border-gray-500">
-                        <h3 class="text-3xl font-bold mb-4 text-gray-300">Plan Bronce</h3>
-                        <p class="text-4xl font-extrabold text-white mb-6">$35.000<span class="text-xl font-light text-gray-400">/mes</span></p>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-300">Plan Mensual</h3>
+                        <p class="text-4xl font-extrabold text-white mb-6">S/70<span class="text-xl font-light text-gray-400">/mes</span></p>
                         <ul class="space-y-3 text-gray-300 mb-8 list-none">
                             <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acceso al Gimnasio</li>
                             <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Uso de Máquinas Premium</li>
                             <li class="pl-7 text-sm italic text-gray-500">Horario de Acceso: 6 AM - 10 PM</li>
                         </ul>
-                        <button class="w-full py-3 bg-gray-500 text-mega-black font-bold rounded-lg hover:bg-gray-400 transition duration-300">Elegir Bronce</button>
+                        <button class="w-full py-3 bg-gray-500 text-mega-black font-bold rounded-lg hover:bg-gray-400 transition duration-300">Elegir Mensual</button>
                     </div>
 
-                    <!-- Plan Oro (Destacado) -->
+                    <!-- 2. Plan Anual (formerly Oro - Highlighted, UPDATED PRICE) -->
                     <div class="bg-mega-black p-10 rounded-3xl shadow-2xl transition duration-500 scale-[1.05] border-8 border-mega-gold relative overflow-hidden">
                         <div class="absolute top-0 right-0 bg-mega-gold text-mega-black text-sm font-bold px-4 py-1 rounded-bl-lg">MÁS POPULAR</div>
-                        <h3 class="text-4xl font-bold mb-4 text-mega-gold">Plan Oro</h3>
-                        <p class="text-5xl font-extrabold text-white mb-6">$300.000<span class="text-xl font-light text-gray-400">/año</span></p>
+                        <h3 class="text-4xl font-bold mb-4 text-mega-gold">Plan Anual</h3>
+                        <!-- PRICE UPDATED TO S/400 -->
+                        <p class="text-5xl font-extrabold text-white mb-6">S/400<span class="text-xl font-light text-gray-400">/año</span></p>
                         <ul class="space-y-3 text-white mb-8 list-none">
                             <li class="flex items-center font-semibold"><svg class="w-6 h-6 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.222a1 1 0 011.902 0l1.583 4.881 5.148.374a1 1 0 01.55 1.704l-3.93 2.946 1.18 5.093a1 1 0 01-1.542 1.12l-4.26-2.529-4.26 2.53a1 1 0 01-1.542-1.12l1.18-5.093-3.93-2.946a1 1 0 01.55-1.704l5.148-.374 1.583-4.881z"></path></svg> Acceso <span class="text-mega-gold">24/7</span> ILIMITADO</li>
                             <li class="flex items-center font-semibold"><svg class="w-6 h-6 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Clases Grupales Ilimitadas</li>
@@ -166,22 +174,22 @@
                         <button class="w-full py-4 bg-mega-gold text-mega-black text-lg font-extrabold rounded-xl hover:bg-yellow-400 transition duration-300 shadow-2xl mt-4">¡MAXIMIZA TU INVERSIÓN!</button>
                     </div>
 
-                    <!-- Plan Plata -->
+                    <!-- 3. Plan Trimestral (formerly Plata) -->
                     <div class="bg-mega-black p-8 rounded-2xl shadow-2xl transition duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(251,191,36,0.2)] border-t-4 border-gray-500">
-                        <h3 class="text-3xl font-bold mb-4 text-gray-300">Plan Plata</h3>
-                        <p class="text-4xl font-extrabold text-white mb-6">$90.000<span class="text-xl font-light text-gray-400">/trimestre</span></p>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-300">Plan Trimestral</h3>
+                        <p class="text-4xl font-extrabold text-white mb-6">S/150<span class="text-xl font-light text-gray-400">/trimestre</span></p>
                         <ul class="space-y-3 text-gray-300 mb-8 list-none">
                             <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acceso <span class="font-bold">24/7</span></li>
                             <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Uso de Máquinas Premium</li>
                             <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-mega-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 1 Clase Grupal por Semana</li>
                         </ul>
-                        <button class="w-full py-3 bg-gray-500 text-mega-black font-bold rounded-lg hover:bg-gray-400 transition duration-300">Elegir Plata</button>
+                        <button class="w-full py-3 bg-gray-500 text-mega-black font-bold rounded-lg hover:bg-gray-400 transition duration-300">Elegir Trimestral</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Clases & PT Section -->
+        <!-- 3. Clases & PT Section (CURRENCY SYMBOL UPDATED) -->
         <section id="clases" class="py-16 md:py-24 bg-mega-black fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center mb-12 text-white border-b-2 border-mega-gold inline-block pb-2">Clases Grupales y Personal Training</h2>
@@ -228,7 +236,7 @@
                                     <p class="text-xl font-semibold text-white">PT Básico (4 sesiones/mes)</p>
                                     <p class="text-gray-400">Ideal para empezar con una base sólida.</p>
                                 </div>
-                                <p class="text-xl font-bold text-mega-gold">$80.000</p>
+                                <p class="text-xl font-bold text-mega-gold">S/80.000</p>
                             </div>
                             <!-- PT Avanzado -->
                             <div class="bg-mega-black p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 transition duration-300">
@@ -236,7 +244,7 @@
                                     <p class="text-xl font-semibold text-white">PT Avanzado (8 sesiones/mes)</p>
                                     <p class="text-gray-400">Progreso constante y seguimiento semanal.</p>
                                 </div>
-                                <p class="text-xl font-bold text-mega-gold">$140.000</p>
+                                <p class="text-xl font-bold text-mega-gold">S/140.000</p>
                             </div>
                             <!-- PT Élite -->
                             <div class="bg-mega-black p-4 rounded-lg flex justify-between items-center hover:bg-gray-700 transition duration-300 border-2 border-mega-gold">
@@ -244,7 +252,7 @@
                                     <p class="text-xl font-semibold text-mega-gold">PT Élite (12 sesiones/mes)</p>
                                     <p class="text-white font-medium">Transformación total y dedicación exclusiva.</p>
                                 </div>
-                                <p class="text-xl font-bold text-mega-gold">$180.000</p>
+                                <p class="text-xl font-bold text-mega-gold">S/180.000</p>
                             </div>
                         </div>
                     </div>
@@ -278,7 +286,7 @@
             </div>
         </section>
 
-        <!-- 5. Beneficios y Adicionales Section -->
+        <!-- 5. Beneficios y Adicionales Section (CURRENCY SYMBOL UPDATED) -->
         <section id="beneficios" class="py-16 md:py-24 bg-mega-gray fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -318,7 +326,7 @@
                                     <p class="text-xl font-semibold text-white">Evaluación Nutricional Avanzada</p>
                                     <p class="text-gray-400">Plan de alimentación alineado a tus objetivos de rendimiento.</p>
                                 </div>
-                                <p class="text-xl font-bold text-mega-gold">$50.000<span class="text-sm font-light text-gray-400">/sesión</span></p>
+                                <p class="text-xl font-bold text-mega-gold">S/50.000</p>
                             </div>
                             <!-- Lockers -->
                             <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
@@ -326,7 +334,7 @@
                                     <p class="text-xl font-semibold text-white">Lockers Premium</p>
                                     <p class="text-gray-400">Seguridad y comodidad con cargador USB integrado.</p>
                                 </div>
-                                <p class="text-xl font-bold text-mega-gold">$10.000<span class="text-sm font-light text-gray-400">/mes</span></p>
+                                <p class="text-xl font-bold text-mega-gold">S/10.000<span class="text-sm font-light text-gray-400">/mes</span></p>
                             </div>
                         </div>
                     </div>
@@ -345,7 +353,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Testimonio 1 -->
                     <div class="bg-mega-gray p-6 rounded-xl shadow-lg border-t-4 border-mega-gold">
-                        <p class="italic text-gray-300 mb-4">"El acceso 24/7 con el Plan Oro cambió mi vida. Puedo entrenar a las 3 AM sin problemas, algo impagable. La calidad de las máquinas es otro nivel."</p>
+                        <p class="italic text-gray-300 mb-4">"El acceso 24/7 con el Plan Anual cambió mi vida. Puedo entrenar a las 3 AM sin problemas, algo impagable. La calidad de las máquinas es otro nivel."</p>
                         <p class="font-bold text-white">- Ricardo S. (Emprendedor)</p>
                     </div>
                     <!-- Testimonio 2 -->
@@ -373,8 +381,8 @@
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-white mb-4">Horarios y Contacto</h4>
-                    <p class="text-gray-400">Acceso 24/7 (Planes Plata y Oro)</p>
-                    <p class="text-gray-400">Horario de Máquinas (Bronce): 6:00 AM - 10:00 PM</p>
+                    <p class="text-gray-400">Acceso 24/7 (Planes Trimestral y Anual)</p>
+                    <p class="text-gray-400">Horario de Máquinas (Mensual): 6:00 AM - 10:00 PM</p>
                     <p class="text-gray-400 mt-2">Atención al Cliente: 6:00 AM - 10:00 PM</p>
                 </div>
                 <div>
@@ -411,11 +419,7 @@
 
             <!-- Messages Area -->
             <div id="chat-window" class="p-4 space-y-4">
-                <div class="flex justify-start">
-                    <div class="bg-mega-gold p-3 rounded-xl text-mega-black max-w-[80%] shadow-md">
-                        ¡Hola! Soy tu Asesor Virtual de MEGAGYM. ¿En qué puedo ayudarte hoy a empezar tu inversión en fitness? 💪
-                    </div>
-                </div>
+                <!-- El mensaje de bienvenida será cargado por JavaScript. -->
             </div>
 
             <!-- Interest CTA -->
@@ -429,6 +433,12 @@
             <!-- Input Area -->
             <div class="p-3 border-t border-mega-gray flex">
                 <input type="text" id="user-input" placeholder="Escribe tu consulta..." class="w-full p-2 rounded-l-lg bg-mega-gray text-white placeholder-gray-400 focus:ring-2 focus:ring-mega-gold focus:outline-none" onkeydown="if(event.key === 'Enter') sendMessage()">
+                
+                <!-- NEW: Microphone Button -->
+                <button id="mic-button" onclick="startSpeechRecognition()" class="bg-gray-500 text-mega-black p-2 hover:bg-gray-400 transition duration-300 focus:outline-none">
+                    <svg id="mic-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 016 0v6a3 3 0 01-3 3z"></path></svg>
+                </button>
+
                 <button id="send-button" onclick="sendMessage()" class="bg-mega-gold text-mega-black p-2 rounded-r-lg hover:bg-yellow-400 transition duration-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
@@ -441,11 +451,11 @@
     </div>
 
     <script>
-        const apiKey = ""; // Canvas environment will provide the API key
+        const apiKey = "AIzaSyAl1m1xmoH_uxlQ8o4TRFTTnEVkhDd_rmY"; // Canvas environment will provide the API key
         const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
         
         // Contexto para el Asesor Virtual (System Instruction)
-        const systemPrompt = "Eres un asesor de MEGAGYM, el gimnasio de alto rendimiento. Información del negocio: Planes de Membresía: Bronce $35.000 (Mensual, Acceso 6 AM - 10 PM), Plata $90.000 (Trimestral, Acceso 24/7, 1 clase/semana), Oro $300.000 (Anual, Acceso 24/7, Clases Ilimitadas, 2 PT/mes). Paquetes de Entrenamiento Personal (PT): Básico $80.000 (4 sesiones), Avanzado $140.000 (8 sesiones), Élite $180.000 (12 sesiones). Clases Grupales: HIIT, Spinning, Yoga Funcional (Lun-Vie: 8:00 AM y 8:00 PM). Garantía: 30 días de satisfacción o devolución de la primera cuota. Beneficio de Flexibilidad: Congela tu membresía hasta 2 veces al año (máx. 15 días cada vez). Servicios Adicionales: Evaluación Nutricional $50.000/sesión, Lockers Premium $10.000/mes. Lema: 'No es un gasto, es una inversión'. Responde solo con esta información. Respuestas cortas y motivadoras con emojis 💪🔥.";
+        const systemPrompt = "Eres un asesor de MEGAGYM, el gimnasio de alto rendimiento. Información del negocio: Plan Diario S/6 (Acceso Limitado). Planes de Membresía: Mensual S/70 (Acceso 6 AM - 10 PM), Trimestral S/150 (Acceso 24/7, 1 clase/semana), Anual S/400 (Acceso 24/7, Clases Ilimitadas, 2 PT/mes). Paquetes de Entrenamiento Personal (PT): Básico S/80.000 (4 sesiones), Avanzado S/140.000 (8 sesiones), Élite S/180.000 (12 sesiones). Clases Grupales: HIIT, Spinning, Yoga Funcional (Lun-Vie: 8:00 AM y 8:00 PM). Garantía: 30 días de satisfacción o devolución de la primera cuota. Beneficio de Flexibilidad: Congela tu membresía hasta 2 veces al año (máx. 15 días cada vez). Servicios Adicionales: Evaluación Nutricional S/50.000/sesión, Lockers Premium S/10.000/mes. Lema: 'No es un gasto, es una inversión'. Todas tus respuestas deben ser **EXTREMADAMENTE CORTAS Y RESUMIDAS**, limitadas a 1-2 frases por punto y siempre usando **emojis**. **ES OBLIGATORIO** usar saltos de línea (nueva línea) y viñetas con guion (-) o asterisco (*) para separar cada punto y usar **negrita (doble asterisco)** en los nombres de los planes y precios. **REGLA DE PRIMERA CONSULTA:** Si la consulta es genérica ('hola', 'información', 'cuéntame'), responde con un saludo y el menú de opciones (1, 2, 3), invitando a seleccionar un número para el resumen. **REGLA DE REPETICIÓN:** Si el usuario repite la pregunta de 'planes de membresía' o 'información del gimnasio' después de la primera consulta detallada, SOLO debes responder con los precios de las membresías (Diario, Mensual, Trimestral, Anual) de forma breve y concisa (ej: 'Diario: S/6 | Mensual: S/70 | Trimestral: S/150 | Anual: S/400. ¡Elige tu inversión!'). 💪🔥.";
 
         const chatWindow = document.getElementById('chat-window');
         const chatBox = document.getElementById('chat-box');
@@ -453,6 +463,10 @@
         const userInput = document.getElementById('user-input');
         const loadingIndicator = document.getElementById('loading-indicator');
         const interestCta = document.getElementById('interest-cta');
+        const micButton = document.getElementById('mic-button'); // New element
+        
+        // State to track if detailed info has been provided (for repetition check)
+        let hasGivenDetailedInfo = false;
 
         // --- 1. Chat UI Logic ---
 
@@ -466,7 +480,7 @@
             }
         });
 
-        // --- 2. Message Rendering ---
+        // --- 2. Message Rendering (FIXED: Conditional parsing for HTML vs AI text) ---
         function addMessage(text, isUser) {
             const messageContainer = document.createElement('div');
             messageContainer.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
@@ -475,7 +489,26 @@
             messageBubble.className = `p-3 rounded-xl max-w-[80%] shadow-md ${
                 isUser ? 'bg-blue-600 text-white' : 'bg-mega-gold text-mega-black'
             }`;
-            messageBubble.innerText = text;
+            
+            if (!isUser) {
+                // Check if the message contains HTML tags (used only by simpleWelcomeMessage)
+                if (text.includes('<ul') || text.includes('<p')) {
+                    // This is the clean HTML Welcome Message (no extra parsing needed)
+                    messageBubble.innerHTML = text;
+                } else {
+                    // This is AI-generated text, apply markdown parsing for bold and line breaks
+                    const formattedText = text
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold text
+                        .replace(/\n\*/g, '<br/>&bull; ') // Replace newline + * with bullet point
+                        .replace(/\n-/g, '<br/>&ndash; ') // Replace newline + - with dash
+                        .replace(/\n/g, '<br/>'); // Preserve line breaks for general spacing
+                        
+                    messageBubble.innerHTML = formattedText; 
+                }
+            } else {
+                messageBubble.innerText = text;
+            }
+
 
             messageContainer.appendChild(messageBubble);
             chatWindow.appendChild(messageContainer);
@@ -505,7 +538,7 @@
                 }
             }
         }
-
+        
         async function sendMessage() {
             const userText = userInput.value.trim();
             if (!userText) return;
@@ -515,10 +548,60 @@
             
             loadingIndicator.classList.remove('hidden');
 
+            let finalQuery = userText;
+            const lowerUserText = userText.toLowerCase();
+
+            // Check for general, vague queries (like "hola", "info", "cuéntame")
+            const isVagueInitialQuery = ['hola', 'información', 'cuéntame', 'info', 'resumen', 'dame información'].some(keyword => lowerUserText.includes(keyword)) && chatWindow.children.length === 1;
+
+            // Check for repetition logic
+            const isRepetitiveQuery = hasGivenDetailedInfo && 
+                                      (lowerUserText.includes('planes') || 
+                                       lowerUserText.includes('membresias') || 
+                                       lowerUserText.includes('precios') ||
+                                       userText.trim() === '1'); // Also catch repeated option 1
+
+            const selectedOption = userText.trim();
+            const isMenuOption = /^[1-3]$/.test(selectedOption); // Only accept 1, 2, or 3
+
+            if (!isMenuOption && isVagueInitialQuery) {
+                // If the first query is vague and not a menu number, show the menu again.
+                addMessage(simpleWelcomeMessage, false);
+                loadingIndicator.classList.add('hidden');
+                userInput.focus();
+                return;
+            } else if (!isMenuOption && selectedOption.length === 1 && /^\d$/.test(selectedOption)) {
+                // NEW: Handle invalid option number (e.g., 4, 5, 0)
+                addMessage("Lo siento, esa opción de menú (**" + selectedOption + "**) no existe. Por favor, elige **1, 2, o 3** de la lista.", false);
+                loadingIndicator.classList.add('hidden');
+                userInput.focus();
+                return;
+            } else if (isRepetitiveQuery) {
+                // Ultra-short, price-only response instruction
+                finalQuery = "Dada la información previa, dame SOLO los precios de las membresías de forma muy breve (Diario, Mensual, Trimestral, Anual), separados por '|'.";
+            } else if (selectedOption === '1') {
+                // Option 1: Memberships
+                finalQuery = "Dame un resumen muy corto y amigable de los planes de membresía y precios (Diario, Mensual, Trimestral y Anual) con emojis, usando saltos de línea y negrita para cada punto.";
+                hasGivenDetailedInfo = true; // Mark that detailed info has been given
+            } else if (selectedOption === '2') {
+                // Option 2: PT, Guarantee, Extras
+                finalQuery = "Dame un resumen muy corto y amigable de los **Paquetes de Entrenamiento Personal (PT)**, nuestra **Garantía** y los **Servicios Adicionales** (Nutrición y Lockers) con emojis, usando saltos de línea y negrita para cada punto.";
+                hasGivenDetailedInfo = true;
+            } else if (selectedOption === '3') {
+                // Option 3: Classes
+                // The prompt now includes schedules as part of the full details of the option.
+                finalQuery = "Dame un resumen muy corto y amigable de las **Clases Grupales** (HIIT, Spinning, Yoga), incluyendo los horarios, con emojis, usando saltos de línea y negrita para cada punto.";
+                hasGivenDetailedInfo = true;
+            } else {
+                // General or follow-up question
+                finalQuery = userText;
+                // Don't set hasGivenDetailedInfo=true, as this might be a follow-up on classes, not a general info request.
+            }
+
             const fullApiUrl = `${apiUrl}?key=${apiKey}`;
 
             const payload = {
-                contents: [{ parts: [{ text: userText }] }],
+                contents: [{ parts: [{ text: finalQuery }] }],
                 systemInstruction: {
                     parts: [{ text: systemPrompt }]
                 },
@@ -552,7 +635,47 @@
             }
         }
 
-        // --- 4. Interest Detection Logic ---
+        // --- 4. Speech Recognition Logic (New) ---
+        function startSpeechRecognition() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("Tu navegador no soporta el reconocimiento de voz. Por favor, usa la entrada de texto.");
+                return;
+            }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'es-ES'; // Set language to Spanish
+
+            micButton.classList.remove('bg-gray-500');
+            micButton.classList.add('bg-red-500'); // Indicate listening status
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                userInput.value = transcript;
+                micButton.classList.remove('bg-red-500');
+                micButton.classList.add('bg-gray-500');
+                sendMessage(); // Automatically send the message after recognition
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                micButton.classList.remove('bg-red-500');
+                micButton.classList.add('bg-gray-500');
+                // Display error to the user without alert()
+                addMessage("Error en el reconocimiento de voz. Inténtalo de nuevo.", false);
+            };
+            
+            recognition.onend = () => {
+                micButton.classList.remove('bg-red-500');
+                micButton.classList.add('bg-gray-500');
+            };
+
+            recognition.start();
+        }
+
+
+        // --- 5. Interest Detection Logic ---
         function detectInterest(query) {
             const lowerQuery = query.toLowerCase();
             const interestKeywords = [
@@ -560,15 +683,29 @@
                 'tour', 'visitar', 'probar', 'empezar', 'planes', 'como'
             ];
             
-            const highInterest = interestKeywords.some(keyword => lowerQuery.includes(keyword));
+            // Check for keywords OR if the user selected option '1'
+            const highInterest = interestKeywords.some(keyword => lowerQuery.includes(keyword)) || ['1'].includes(query.trim()); 
 
             if (highInterest) {
                 interestCta.classList.remove('hidden');
             }
         }
 
+        // The simple welcome message content (RESTORED TO PREVIOUS VERSION)
+        const simpleWelcomeMessage = `
+            <p>¡Hola! Bienvenido a MEGAGYM. 👋
+            Estamos aquí para ayudarte a encontrar el plan perfecto para ti.
+            ¿Qué te interesa saber hoy?</p>
+            
+            <ul class="list-none mt-2 space-y-1 font-semibold">
+                <li>1. 💰 Precios y Membresías (Diario, Mensual, Trimestral/Anual)</li>
+                <li>2. 💪 Entrenamiento Personal (PT), Garantías y Extras</li>
+                <li>3. 🥋 Clases Grupales (HIIT, Spinning, Yoga)</li>
+            </ul>
+            <p class="mt-2 text-sm italic">Escribe el número de la opción que buscas o presiona el micrófono para hablar.</p>
+        `;
 
-        // --- 5. Scroll Animation (Intersection Observer) ---
+        // --- 6. Scroll Animation (Intersection Observer) ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.fade-in-section');
 
@@ -595,8 +732,9 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            // Initial AI message
-            addMessage("¡Hola! Soy tu Asesor Virtual de MEGAGYM. ¿En qué puedo ayudarte hoy a empezar tu inversión en fitness? 💪", false);
+            // Initial AI message injection using the simple welcome message
+            chatWindow.innerHTML = ''; 
+            addMessage(simpleWelcomeMessage, false);
         });
 
     </script>
