@@ -614,18 +614,20 @@
             };
 
             try {
-                const response = await fetchWithBackoff(fullApiUrl, options);
-                const result = await response.json();
-                
-                const modelText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+  // --- CORREGIDO: llamada directa al endpoint backend ---
+  const response = await fetch("/api/chat", options);
+  const result = await response.json();
 
-                if (modelText) {
-                    addMessage(modelText, false);
-                    detectInterest(userText);
-                } else {
-                    addMessage("Lo siento, hubo un problema con la respuesta del asesor. Intenta de nuevo. 🔥", false);
-                    console.error("Gemini API response missing text:", result);
-                }
+  // Soporte para ambos formatos de respuesta
+  const modelText = result?.reply || result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+  if (modelText) {
+    addMessage(modelText, false);
+    detectInterest(userText);
+  } else {
+    addMessage("Lo siento, hubo un problema con la respuesta del asesor. Intenta de nuevo. 🔥", false);
+    console.error("Gemini API response missing text:", result);
+  }
             } catch (error) {
                 addMessage("Lo siento, no puedo comunicarme con el servidor ahora. ¡Intenta de nuevo más tarde!", false);
                 console.error("Gemini API request failed:", error);
